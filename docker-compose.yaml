@@ -21,12 +21,14 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: secret
-      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: 'laravel'
+      MYSQL_USER: 'laravel'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
     volumes:
       - dbdata:/var/lib/mysql
+    expose:
+      - '3306'
 
 volumes:
   dbdata:
