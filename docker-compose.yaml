@@ -24,10 +24,10 @@ services:
     image: mysql
     restart: always
     environment:
-      MYSQL_DATABASE: 'laravel'
-      MYSQL_USER: 'laravel'
-      MYSQL_PASSWORD: 'password'
-      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_DATABASE: '${DB_DATABASE:-laravel}'  
+      MYSQL_USER: '${DB_USER:-user}'  
+      MYSQL_PASSWORD: '${DB_PASSWORD:-password}' 
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD:-password}' 
     volumes:
       - dbdata:/var/lib/mysql
     expose:
